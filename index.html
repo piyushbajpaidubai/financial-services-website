@@ -3,322 +3,949 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Activity Based Consultancy — Finance & Accounts Outsourcing for Architecture Firms, Dubai</title>
+  <title>Activity Based Consultancy — Finance & Accounts for Architecture Firms, Dubai</title>
   <link rel="preconnect" href="https://fonts.cdnfonts.com" />
   <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
       --navy:   #0d2545;
-      --navy2:  #153260;
       --gold:   #c9a84c;
-      --gold2:  #e8c56a;
-      --light:  #f4f6fb;
-      --mid:    #dde3ef;
-      --text:   #1e2d45;
-      --muted:  #5a6a82;
+      --gold2:  #e0b95c;
+      --cream:  #f4ede0;
+      --cream2: #ede6d6;
+      --tan:    #c8b48a;
       --white:  #ffffff;
-      --green:  #1a7a45;
-      --radius: 10px;
-      --shadow: 0 4px 24px rgba(13,37,69,.10);
+      --text:   #1a1a1a;
+      --muted:  #5a6070;
     }
+
     html { scroll-behavior: smooth; }
-    body { font-family: 'Futura PT Book', 'Futura PT', 'Futura', 'Century Gothic', sans-serif; color: var(--text); background: var(--white); line-height: 1.65; }
-    h1, h2, h3, h4, .logo, .stat-num, .sla-val, .price-amount, .fz-abbr, .diff-num, .tl-dot, .logo-mark, .pillar-name, .value-num { font-family: 'Futura PT Bold', 'Futura PT', 'Futura', 'Century Gothic', sans-serif; }
-    .tag, .nav-cta, .btn-primary, .btn-outline, .btn-price, .topbar, .hero-eyebrow, .service-tag, .tl-badge, .stat-label, .sla-label, .price-tier, .price-period, .popular-badge, .footer-links h4, .addl-card h4 { font-family: 'Futura PT Book', 'Futura PT', 'Futura', 'Century Gothic', sans-serif; letter-spacing: .04em; }
+
+    body {
+      font-family: 'Futura PT Book', 'Futura PT', 'Century Gothic', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      line-height: 1.2;
+    }
+
     a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
 
-    /* Utility */
-    .container { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
-    .tag {
-      display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--gold); border: 1.5px solid var(--gold);
-      border-radius: 20px; padding: 3px 14px; margin-bottom: 14px;
+    /* ───── Buttons ───── */
+    .btn-gold {
+      display: inline-block;
+      border: 1.5px solid var(--gold);
+      color: var(--navy);
+      background: var(--gold);
+      font-family: 'Futura PT Book', 'Century Gothic', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 13px 32px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
     }
-    .section-title { font-size: 2rem; font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 10px; }
-    .section-sub { font-size: 1.05rem; color: var(--muted); max-width: 660px; margin-bottom: 48px; }
+    .btn-gold:hover { background: var(--gold2); border-color: var(--gold2); }
 
-    /* Top Bar */
+    .btn-outline-gold {
+      display: inline-block;
+      border: 1.5px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+      font-family: 'Futura PT Book', 'Century Gothic', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 13px 32px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-outline-gold:hover { background: var(--gold); color: var(--navy); }
+
+    .btn-outline-white {
+      display: inline-block;
+      border: 1.5px solid rgba(255,255,255,0.6);
+      color: var(--white);
+      background: transparent;
+      font-family: 'Futura PT Book', 'Century Gothic', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 13px 32px;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline-white:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ───── Top Bar ───── */
     .topbar {
-      background: var(--navy); color: rgba(255,255,255,.7); font-size: .8rem;
-      padding: 8px 0; text-align: center; letter-spacing: .03em;
+      background: var(--navy);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-align: center;
+      padding: 9px 20px;
     }
-    .topbar span { color: var(--gold); font-weight: 700; }
+    .topbar span { color: var(--gold); }
 
-    /* Nav */
+    /* ───── Navigation ───── */
     nav {
-      position: sticky; top: 0; z-index: 100; background: var(--white);
-      border-bottom: 1px solid var(--mid); box-shadow: 0 2px 12px rgba(13,37,69,.07);
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--white);
+      border-bottom: 1px solid #e8e0d0;
     }
-    nav .inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.18rem; color: var(--navy); }
-    .logo-mark {
-      width: 38px; height: 38px; background: var(--navy); border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; font-weight: 900; color: var(--gold); letter-spacing: -.5px;
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
     }
-    .logo-sub { font-size: .72rem; font-weight: 400; color: var(--muted); display: block; line-height: 1; margin-top: 1px; }
-    .nav-links { display: flex; gap: 26px; list-style: none; font-size: .88rem; font-weight: 600; color: var(--muted); }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-icon svg { width: 24px; height: 24px; }
+    .logo-text { line-height: 1.15; }
+    .logo-abbr {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.08em;
+    }
+    .logo-full {
+      font-size: 0.62rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
     .nav-links a:hover { color: var(--navy); }
     .nav-cta {
-      background: var(--gold); color: var(--navy); font-weight: 700; font-size: .85rem;
-      padding: 9px 22px; border-radius: 6px; letter-spacing: .02em; transition: background .2s;
+      background: var(--navy);
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 11px 24px;
+      border: 1.5px solid var(--navy);
+      transition: background 0.2s, color 0.2s;
     }
-    .nav-cta:hover { background: var(--gold2); }
+    .nav-cta:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
 
-    /* Hero */
+    /* ───── Hero ───── */
     .hero {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 60%, #1a3f72 100%);
-      color: var(--white); padding: 88px 0 80px; position: relative; overflow: hidden;
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--navy);
     }
-    .hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M0 60L60 0M-10 10L10-10M50 70L70 50' stroke='rgba(255,255,255,.04)' stroke-width='1.5'/%3E%3C/svg%3E") repeat;
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(160deg, rgba(13,37,69,0.88) 0%, rgba(13,37,69,0.75) 50%, rgba(13,37,69,0.82) 100%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231a3a6b'/%3E%3Cstop offset='1' stop-color='%230a1e3d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='600' fill='url(%23g1)'/%3E%3Cpath d='M0 500 L100 400 L200 450 L300 350 L400 420 L500 300 L600 380 L700 280 L800 350 L800 600 Z' fill='rgba(201,168,76,0.08)'/%3E%3Cpath d='M0 550 L150 430 L300 490 L450 360 L600 440 L750 320 L800 400 L800 600 Z' fill='rgba(201,168,76,0.05)'/%3E%3Crect x='50' y='300' width='60' height='180' fill='rgba(201,168,76,0.07)'/%3E%3Crect x='160' y='250' width='45' height='230' fill='rgba(201,168,76,0.06)'/%3E%3Crect x='260' y='320' width='55' height='160' fill='rgba(201,168,76,0.05)'/%3E%3Crect x='370' y='200' width='70' height='280' fill='rgba(201,168,76,0.07)'/%3E%3Crect x='490' y='270' width='50' height='210' fill='rgba(201,168,76,0.06)'/%3E%3Crect x='600' y='230' width='65' height='250' fill='rgba(201,168,76,0.05)'/%3E%3Crect x='700' y='280' width='55' height='200' fill='rgba(201,168,76,0.06)'/%3E%3C/svg%3E") center/cover no-repeat;
     }
-    .hero .container { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .hero-eyebrow { font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
-    .hero h1 { font-size: 2.65rem; font-weight: 800; line-height: 1.18; margin-bottom: 22px; }
-    .hero h1 em { font-style: normal; color: var(--gold); }
-    .hero-body { font-size: 1.05rem; color: rgba(255,255,255,.78); margin-bottom: 36px; max-width: 490px; }
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--gold); color: var(--navy); font-weight: 700; font-size: .95rem;
-      padding: 14px 30px; border-radius: 7px; transition: background .2s, transform .1s;
+    /* Subtle grid overlay */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px);
+      background-size: 80px 80px;
     }
-    .btn-primary:hover { background: var(--gold2); transform: translateY(-1px); }
-    .btn-outline {
-      border: 2px solid rgba(255,255,255,.35); color: var(--white); font-weight: 600;
-      font-size: .95rem; padding: 13px 28px; border-radius: 7px; transition: border-color .2s;
+    .hero-content {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 40px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      width: 100%;
     }
-    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-logo-mark {
+      font-family: 'Futura PT Book', 'Century Gothic', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+    .hero-logo-mark::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .hero h1 {
+      font-size: 3.6rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .hero h1 em { font-style: italic; }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 460px;
+      margin-bottom: 44px;
+      line-height: 1.75;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
-    /* Hero pillars card */
-    .hero-card {
-      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.15);
-      border-radius: 14px; padding: 30px; backdrop-filter: blur(8px);
+    /* Hero stat card */
+    .hero-stats {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(201,168,76,0.25);
+      padding: 36px;
+      backdrop-filter: blur(6px);
     }
-    .hero-card h3 { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
-    .pillar-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .pillar-item {
-      display: flex; align-items: flex-start; gap: 12px;
-      padding: 12px 14px; background: rgba(255,255,255,.06); border-radius: 8px;
-      border-left: 3px solid var(--gold);
+    .hero-stats-title {
+      font-family: 'Futura PT Book', 'Century Gothic', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
     }
-    .pillar-num { font-size: .8rem; font-weight: 800; color: var(--gold); min-width: 22px; margin-top: 1px; }
-    .pillar-name { font-size: .9rem; font-weight: 600; color: var(--white); }
-    .pillar-desc { font-size: .76rem; color: rgba(255,255,255,.6); margin-top: 1px; }
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 28px; }
+    .stat-item {}
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .hero-modules {
+      border-top: 1px solid rgba(201,168,76,0.2);
+      padding-top: 24px;
+    }
+    .hero-modules-label {
+      font-family: 'Futura PT Book', 'Century Gothic', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 12px;
+    }
+    .module-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .module-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border: 1px solid rgba(201,168,76,0.3);
+      color: rgba(255,255,255,0.7);
+    }
 
-    /* Stats */
-    .stats { background: var(--navy); color: var(--white); padding: 36px 0; }
-    .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
-    .stat-item { text-align: center; padding: 16px 12px; border-right: 1px solid rgba(255,255,255,.12); }
-    .stat-item:last-child { border-right: none; }
-    .stat-num { font-size: 2rem; font-weight: 800; color: var(--gold); line-height: 1; margin-bottom: 6px; }
-    .stat-label { font-size: .78rem; color: rgba(255,255,255,.6); letter-spacing: .02em; line-height: 1.35; }
+    /* ───── Section Wrapper ───── */
+    .section-cream { background: var(--cream); }
+    .section-white { background: var(--white); }
+    .section-navy { background: var(--navy); }
+    .section-dark-overlay {
+      position: relative;
+      background: var(--navy);
+    }
+    .section-dark-overlay::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(13,37,69,0.85), rgba(13,37,69,0.85)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23152d50'/%3E%3Ccircle cx='150' cy='200' r='180' fill='rgba(201,168,76,0.04)'/%3E%3Ccircle cx='450' cy='200' r='180' fill='rgba(201,168,76,0.04)'/%3E%3C/svg%3E") center/cover;
+    }
 
-    /* Delivery model */
-    .delivery { padding: 88px 0; background: var(--white); }
-    .delivery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-    .model-card {
-      background: var(--light); border-radius: 14px; padding: 36px;
-      border-left: 4px solid var(--gold);
+    /* ───── Trusted Section ───── */
+    .trusted {
+      padding: 100px 0;
     }
-    .model-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
-    .model-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .model-list li { font-size: .9rem; color: var(--text); display: flex; gap: 10px; align-items: flex-start; }
-    .check { color: var(--gold); font-weight: 700; font-size: .9rem; flex-shrink: 0; margin-top: 2px; }
+    .trusted .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .section-eyebrow {
+      font-family: 'Futura PT Book', 'Century Gothic', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .trusted h2 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+    .trusted p {
+      font-size: 0.97rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+      line-height: 1.75;
+    }
+    .trusted .btn-wrap { margin-top: 32px; }
+    .img-block {
+      position: relative;
+    }
+    .img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #c8b48a 0%, #b09a72 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .img-placeholder svg { opacity: 0.35; }
+    .img-placeholder-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(13,37,69,0.75);
+      padding: 14px 20px;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+    }
+    .img-accent {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      width: 100px;
+      height: 100px;
+      background: var(--gold);
+      opacity: 0.15;
+      z-index: 0;
+    }
 
-    .op-env { background: var(--navy); border-radius: 14px; padding: 36px; color: var(--white); }
-    .op-env h3 { font-size: 1.1rem; font-weight: 700; color: var(--gold); margin-bottom: 16px; }
-    .op-env ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .op-env ul li { font-size: .9rem; color: rgba(255,255,255,.82); display: flex; gap: 10px; align-items: flex-start; }
-    .op-dot { color: var(--gold); font-weight: 900; flex-shrink: 0; }
+    /* ───── Why ABC Section ───── */
+    .why-abc {
+      padding: 100px 0;
+    }
+    .why-abc .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .why-abc h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+    .why-abc p {
+      font-size: 0.97rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+      line-height: 1.75;
+    }
+    .why-abc .btn-wrap { margin-top: 32px; }
 
-    /* Services */
-    .services { padding: 88px 0; background: var(--light); }
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-    .service-card {
-      background: var(--white); border-radius: 14px; padding: 30px;
-      box-shadow: var(--shadow); border: 1px solid var(--mid);
-      display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s;
+    /* ───── Testimonials ───── */
+    .testimonials {
+      position: relative;
+      padding: 100px 0;
+      z-index: 1;
     }
-    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(13,37,69,.15); }
-    .service-card.featured { background: var(--navy); color: var(--white); border-color: var(--navy); }
-    .service-card.wide { grid-column: span 2; }
-    .service-icon {
-      width: 50px; height: 50px; border-radius: 12px; background: var(--light);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.45rem; margin-bottom: 18px; flex-shrink: 0;
+    .testimonials .inner {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      z-index: 2;
     }
-    .service-card.featured .service-icon { background: rgba(255,255,255,.1); }
-    .service-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-    .service-card.featured h3 { color: var(--gold); }
-    .service-card .service-tag {
-      font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 8px;
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 60px;
     }
-    .service-card.featured .service-tag { color: rgba(255,255,255,.5); }
-    .service-card p { font-size: .86rem; color: var(--muted); margin-bottom: 18px; flex: 1; }
-    .service-card.featured p { color: rgba(255,255,255,.68); }
-    .service-items { list-style: none; display: flex; flex-direction: column; gap: 7px; }
-    .service-items li { font-size: .83rem; color: var(--text); display: flex; align-items: flex-start; gap: 8px; }
-    .service-card.featured .service-items li { color: rgba(255,255,255,.82); }
-    .service-items-2col { columns: 2; column-gap: 20px; }
-    .service-items-2col li { break-inside: avoid; }
+    .testimonials h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .testimonials-sub {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: rgba(201,168,76,0.8);
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .tcard {
+      border: 1px solid rgba(201,168,76,0.35);
+      padding: 32px;
+      position: relative;
+    }
+    .tcard-quote {
+      font-size: 2.5rem;
+      color: var(--gold);
+      opacity: 0.4;
+      line-height: 1;
+      margin-bottom: 16px;
+      font-family: 'Playfair Display', serif;
+    }
+    .tcard p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+    .tcard-author {
+      border-top: 1px solid rgba(201,168,76,0.2);
+      padding-top: 20px;
+    }
+    .tcard-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 2px;
+    }
+    .tcard-role {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+    }
 
-    /* Additional Services */
-    .additional { padding: 64px 0 88px; background: var(--light); }
-    .addl-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .addl-card {
-      background: var(--white); border: 1px solid var(--mid); border-radius: var(--radius);
-      padding: 20px 18px; transition: border-color .2s, box-shadow .2s;
+    /* ───── Services Section ───── */
+    .services {
+      padding: 100px 0;
     }
-    .addl-card:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(201,168,76,.12); }
-    .addl-icon { font-size: 1.5rem; margin-bottom: 10px; }
-    .addl-card h4 { font-size: .9rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
-    .addl-card p { font-size: .8rem; color: var(--muted); }
+    .services .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .services-header {
+      margin-bottom: 60px;
+    }
+    .services h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .services-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--tan);
+    }
+    .scard {
+      background: var(--cream2);
+      padding: 40px 32px;
+      border-right: 1px solid var(--tan);
+      transition: background 0.2s;
+    }
+    .scard:last-child { border-right: none; }
+    .scard:hover { background: #e5d9c4; }
+    .scard-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: rgba(13,37,69,0.15);
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+    .scard h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+    .scard p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
 
-    /* Benefits */
-    .benefits { padding: 88px 0; background: var(--white); }
-    .benefits-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
-    .benefit-card {
-      text-align: center; padding: 28px 16px;
-      border: 1px solid var(--mid); border-radius: 14px;
-      transition: border-color .2s, transform .2s;
+    /* ───── Service List ───── */
+    .service-list {
+      padding: 100px 0;
     }
-    .benefit-card:hover { border-color: var(--gold); transform: translateY(-3px); }
-    .benefit-icon { font-size: 2rem; margin-bottom: 12px; }
-    .benefit-card h4 { font-size: .92rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.3; }
-    .benefit-card p { font-size: .78rem; color: var(--muted); }
+    .service-list .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .service-list h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 36px;
+    }
+    .slist { list-style: none; }
+    .slist li {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid #ddd5c4;
+      font-size: 0.95rem;
+      color: var(--navy);
+      font-weight: 600;
+    }
+    .slist li:first-child { border-top: 1px solid #ddd5c4; }
+    .slist-icon {
+      width: 40px;
+      height: 40px;
+      border: 1.5px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .slist-icon svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
 
-    /* SLA strip */
-    .sla { background: var(--navy); padding: 48px 0; }
-    .sla-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
-    .sla-item { text-align: center; padding: 20px; border-right: 1px solid rgba(255,255,255,.1); }
-    .sla-item:last-child { border-right: none; }
-    .sla-val { font-size: 1.9rem; font-weight: 800; color: var(--gold); margin-bottom: 6px; }
-    .sla-label { font-size: .82rem; color: rgba(255,255,255,.65); }
+    /* ───── Pricing ───── */
+    .pricing {
+      padding: 100px 0;
+    }
+    .pricing .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .pricing h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .pricing-sub {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.06em;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .pcard {
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 48px 36px;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+    .pcard:hover { border-color: rgba(201,168,76,0.5); }
+    .pcard.featured {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.06);
+    }
+    .pcard-badge {
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+    }
+    .pcard-tier {
+      font-family: 'Futura PT Book', 'Century Gothic', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .pcard-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .pcard-currency {
+      font-size: 1.2rem;
+      vertical-align: super;
+      font-weight: 400;
+    }
+    .pcard-period {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.06em;
+      margin-bottom: 28px;
+    }
+    .pcard-divider {
+      height: 1px;
+      background: rgba(201,168,76,0.2);
+      margin-bottom: 28px;
+    }
+    .pcard-features { list-style: none; margin-bottom: 36px; }
+    .pcard-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.75);
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .pcard-features li::before {
+      content: '✓';
+      color: var(--gold);
+      font-size: 0.85rem;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
 
-    /* Security */
-    .security { padding: 88px 0; background: var(--light); }
-    .security-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-    .security-card {
-      background: var(--white); border-radius: 14px; padding: 32px;
-      border: 1px solid var(--mid); box-shadow: var(--shadow);
+    /* ───── Free Zones ───── */
+    .freezones {
+      padding: 80px 0;
     }
-    .security-card h3 {
-      font-size: 1rem; font-weight: 700; color: var(--navy);
-      margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+    .freezones .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      text-align: center;
     }
-    .security-badge {
-      font-size: .68rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
-      padding: 3px 10px; border-radius: 20px;
+    .freezones h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
     }
-    .badge-detect { background: #fff5e6; color: #c47a1a; }
-    .badge-prevent { background: #e8f5ee; color: var(--green); }
-    .security-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .security-list li { font-size: .87rem; color: var(--text); display: flex; gap: 10px; align-items: flex-start; }
-    .sec-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+    .freezones-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 44px;
+    }
+    .zones-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid #ddd5c4;
+    }
+    .zone-item {
+      padding: 24px 20px;
+      border-right: 1px solid #ddd5c4;
+      text-align: center;
+    }
+    .zone-item:last-child { border-right: none; }
+    .zone-name {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+    .zone-sub {
+      font-size: 0.67rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
 
-    /* Value Props */
-    .value { padding: 88px 0; background: var(--white); }
-    .value-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
-    .value-card {
-      border-top: 3px solid var(--gold); padding: 24px 18px;
-      background: var(--light); border-radius: 0 0 10px 10px;
+    /* ───── Contact ───── */
+    .contact {
+      padding: 100px 0;
     }
-    .value-num { font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
-    .value-card h4 { font-size: .95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.3; }
-    .value-card p { font-size: .82rem; color: var(--muted); }
+    .contact .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+    .contact h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 36px;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .contact-icon {
+      width: 38px;
+      height: 38px;
+      border: 1.5px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .contact-icon svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+    .contact-detail-text h4 {
+      font-family: 'Futura PT Book', 'Century Gothic', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .contact-detail-text p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .contact-hours h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 28px;
+    }
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 14px 0;
+      border-bottom: 1px solid #ddd5c4;
+      font-size: 0.88rem;
+    }
+    .hours-day { color: var(--navy); font-weight: 600; }
+    .hours-time { color: var(--muted); }
+    .hours-time.gold { color: var(--gold); font-weight: 600; }
+    .social-links { margin-top: 36px; }
+    .social-links h4 {
+      font-family: 'Futura PT Book', 'Century Gothic', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .social-row { display: flex; gap: 16px; }
+    .social-link {
+      font-size: 0.8rem;
+      color: var(--gold);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .social-link:hover { color: var(--navy); }
 
-    /* Free Zones */
-    .freezones { padding: 88px 0; background: var(--light); }
-    .fz-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .fz-card {
-      background: var(--white); border: 1px solid var(--mid); border-radius: var(--radius);
-      padding: 20px 16px; text-align: center; transition: border-color .2s, box-shadow .2s;
+    /* ───── Footer ───── */
+    footer {
+      position: relative;
+      min-height: 340px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      overflow: hidden;
     }
-    .fz-card:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(201,168,76,.15); }
-    .fz-abbr { font-size: 1.15rem; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
-    .fz-name { font-size: .76rem; color: var(--muted); line-height: 1.35; }
+    .footer-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(13,37,69,0.92), rgba(13,37,69,0.92)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='400'%3E%3Crect width='800' height='400' fill='%230a1e3d'/%3E%3Cpath d='M0 200 Q200 100 400 200 Q600 300 800 200 L800 400 L0 400 Z' fill='rgba(201,168,76,0.04)'/%3E%3Cpath d='M0 300 Q200 200 400 300 Q600 400 800 300 L800 400 L0 400 Z' fill='rgba(201,168,76,0.03)'/%3E%3C/svg%3E") center/cover;
+    }
+    footer .footer-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 40px 48px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 60px;
+    }
+    .footer-brand {}
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .footer-logo-icon {
+      width: 44px;
+      height: 44px;
+      border: 1.5px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-logo-text .abbr {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+    }
+    .footer-logo-text .full {
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      display: block;
+      margin-top: 2px;
+    }
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+      max-width: 280px;
+      margin-bottom: 24px;
+    }
+    .footer-cert {
+      font-size: 0.68rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      opacity: 0.8;
+    }
+    .footer-col h4 {
+      font-family: 'Futura PT Book', 'Century Gothic', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: color 0.2s;
+    }
+    .footer-col ul li:hover { color: var(--gold); cursor: default; }
+    .footer-bottom {
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(201,168,76,0.15);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.04em;
+    }
+    .footer-reg {
+      font-size: 0.68rem;
+      color: rgba(201,168,76,0.5);
+      letter-spacing: 0.04em;
+    }
 
-    /* Pricing */
-    .pricing { padding: 88px 0; background: var(--white); }
-    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .price-card { border: 2px solid var(--mid); border-radius: 14px; padding: 36px 28px; display: flex; flex-direction: column; }
-    .price-card.popular { border-color: var(--navy); position: relative; overflow: hidden; }
-    .popular-badge {
-      position: absolute; top: 18px; right: -24px;
-      background: var(--gold); color: var(--navy); font-size: .68rem; font-weight: 800;
-      letter-spacing: .08em; text-transform: uppercase; padding: 4px 36px; transform: rotate(35deg);
-    }
-    .price-tier { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
-    .price-card.popular .price-tier { color: var(--navy); }
-    .price-amount { font-size: 2.3rem; font-weight: 800; color: var(--navy); line-height: 1; margin-bottom: 4px; }
-    .price-currency { font-size: 1.1rem; font-weight: 600; vertical-align: top; line-height: 2.2; }
-    .price-period { font-size: .8rem; color: var(--muted); margin-bottom: 8px; }
-    .price-desc { font-size: .85rem; color: var(--muted); margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px solid var(--mid); }
-    .price-features { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 26px; flex: 1; }
-    .price-features li { font-size: .84rem; color: var(--text); display: flex; gap: 9px; align-items: flex-start; }
-    .btn-price {
-      display: block; text-align: center; padding: 13px; border-radius: 7px;
-      font-weight: 700; font-size: .9rem; border: 2px solid var(--navy); color: var(--navy);
-      transition: background .2s, color .2s;
-    }
-    .btn-price:hover, .price-card.popular .btn-price { background: var(--navy); color: var(--white); }
-
-    /* CTA */
-    .cta { padding: 88px 0; background: var(--light); }
-    .cta-box {
-      background: var(--navy); border-radius: 16px; padding: 60px;
-      display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center;
-    }
-    .cta-box h2 { font-size: 2rem; font-weight: 800; color: var(--white); margin-bottom: 10px; }
-    .cta-box p { font-size: 1rem; color: rgba(255,255,255,.7); max-width: 500px; }
-    .cta-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; white-space: nowrap; }
-    .cta-contact { font-size: .8rem; color: rgba(255,255,255,.5); text-align: center; margin-top: 4px; }
-    .cta-contact a { color: var(--gold); }
-
-    /* Footer */
-    footer { background: #0a1d38; color: rgba(255,255,255,.5); padding: 40px 0 28px; }
-    .footer-inner {
-      display: flex; justify-content: space-between; align-items: flex-start; gap: 40px;
-      padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 20px;
-    }
-    .footer-brand .logo { color: var(--white); margin-bottom: 10px; }
-    .footer-brand p { font-size: .82rem; max-width: 260px; }
-    .footer-links h4 { font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 12px; }
-    .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
-    .footer-links ul li a { font-size: .83rem; color: rgba(255,255,255,.55); }
-    .footer-links ul li a:hover { color: var(--gold); }
-    .footer-bottom { font-size: .77rem; text-align: center; }
-
-    /* Responsive */
-    @media (max-width: 960px) {
-      .hero .container { grid-template-columns: 1fr; gap: 40px; }
-      .hero h1 { font-size: 2rem; }
-      .stats-grid { grid-template-columns: repeat(3, 1fr); }
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .service-card.wide { grid-column: span 1; }
-      .service-items-2col { columns: 1; }
-      .benefits-grid { grid-template-columns: repeat(3, 1fr); }
-      .sla-grid { grid-template-columns: repeat(2, 1fr); }
-      .value-grid { grid-template-columns: repeat(3, 1fr); }
-      .fz-grid { grid-template-columns: repeat(2, 1fr); }
-      .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
-      .cta-box { grid-template-columns: 1fr; padding: 40px; }
-      .cta-actions { align-items: flex-start; }
+    /* ───── Responsive ───── */
+    @media (max-width: 900px) {
+      .hero-content,
+      .trusted .inner,
+      .why-abc .inner,
+      .service-list .inner,
+      .contact .inner,
+      .footer .footer-content { grid-template-columns: 1fr; gap: 48px; }
+      .hero h1 { font-size: 2.4rem; }
+      .services-cards,
+      .testimonials-grid,
+      .pricing-grid { grid-template-columns: 1fr; }
+      .zones-grid { grid-template-columns: repeat(2, 1fr); }
       .nav-links { display: none; }
-      .delivery-grid { grid-template-columns: 1fr; }
-      .security-grid { grid-template-columns: 1fr; }
-      .addl-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-inner { flex-direction: column; gap: 28px; }
-    }
-    @media (max-width: 600px) {
-      .services-grid { grid-template-columns: 1fr; }
-      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
-      .value-grid { grid-template-columns: repeat(2, 1fr); }
-      .section-title { font-size: 1.6rem; }
     }
   </style>
 </head>
@@ -326,624 +953,505 @@
 
 <!-- Top Bar -->
 <div class="topbar">
-  <span>Activity Based Consultancy (ABC)</span> &nbsp;·&nbsp; Outsourced Finance, Payroll &amp; CFO Services for Architecture Consultancies — Dubai Free Zones
+  Specialist Finance &amp; Accounting Partner for Architecture Firms in UAE Free Zones &nbsp;|&nbsp;
+  <span>Call: +971 4 XXX XXXX</span> &nbsp;|&nbsp; hello@abcuae.com
 </div>
 
-<!-- Nav -->
+<!-- Navigation -->
 <nav>
-  <div class="container inner">
+  <div class="nav-inner">
     <div class="logo">
-      <div class="logo-mark">ABC</div>
-      <div>
-        Activity Based Consultancy
-        <span class="logo-sub">Finance &amp; Accounts Outsourcing</span>
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="square">
+          <path d="M3 21h18M5 21V9l7-6 7 6v12M9 21v-6h6v6"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <div class="logo-abbr">ABC</div>
+        <div class="logo-full">Activity Based Consultancy</div>
       </div>
     </div>
     <ul class="nav-links">
+      <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#benefits">Benefits</a></li>
-      <li><a href="#security">Security</a></li>
-      <li><a href="#freezones">Free Zones</a></li>
       <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#freezones">Free Zones</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#cta" class="nav-cta">Book a Free Consultation</a>
+    <a href="#contact" class="nav-cta">Get a Quote</a>
   </div>
 </nav>
 
 <!-- Hero -->
 <section class="hero">
-  <div class="container">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
     <div class="hero-left">
-      <div class="hero-eyebrow">Outsourced Finance &amp; Accounts — Dubai Free Zones</div>
-      <h1>Your Complete <em>Finance Department</em>, Without the In-House Cost</h1>
-      <p class="hero-body">
-        ABC delivers a full outsourced finance function — bookkeeping, dashboards, VAT, corporate tax, payroll, HR &amp; PRO, and fractional CFO — purpose-built for small architecture consultancies operating in Dubai free zones.
+      <div class="hero-logo-mark">Activity Based Consultancy</div>
+      <h1>Expert <em>Financial</em> Services for Architecture Firms</h1>
+      <p class="hero-sub">
+        Precision accounting, compliance, and financial management tailored exclusively for small architecture and design consultancies operating in Dubai's free zones.
       </p>
       <div class="hero-actions">
-        <a href="#cta" class="btn-primary">Book a Free Consultation</a>
-        <a href="#services" class="btn-outline">View Services</a>
+        <a href="#services" class="btn-gold">Our Services</a>
+        <a href="#contact" class="btn-outline-white">Contact Us</a>
       </div>
     </div>
     <div class="hero-right">
-      <div class="hero-card">
-        <h3>Five Service Pillars</h3>
-        <ul class="pillar-list">
-          <li class="pillar-item">
-            <span class="pillar-num">01</span>
-            <div>
-              <div class="pillar-name">F&amp;A Outsourcing</div>
-              <div class="pillar-desc">P2P · O2C · R2R · MIS · end-to-end finance operations</div>
-            </div>
-          </li>
-          <li class="pillar-item">
-            <span class="pillar-num">02</span>
-            <div>
-              <div class="pillar-name">Consulting</div>
-              <div class="pillar-desc">Due diligence · Structuring · PRO · UAE entry · Fractional CFO</div>
-            </div>
-          </li>
-          <li class="pillar-item">
-            <span class="pillar-num">03</span>
-            <div>
-              <div class="pillar-name">Internal Audit</div>
-              <div class="pillar-desc">Control evaluation · Risk-based audits · Value-add reporting</div>
-            </div>
-          </li>
-          <li class="pillar-item">
-            <span class="pillar-num">04</span>
-            <div>
-              <div class="pillar-name">Taxation</div>
-              <div class="pillar-desc">VAT filing · Corporate Tax · Reverse charge · FTA compliance</div>
-            </div>
-          </li>
-          <li class="pillar-item">
-            <span class="pillar-num">05</span>
-            <div>
-              <div class="pillar-name">Payroll Processing</div>
-              <div class="pillar-desc">WPS · Payslips · EOSB · Incentives &amp; OT · HR coordination</div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Stats -->
-<section class="stats">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="stat-num">2.0</div>
-        <div class="stat-label">FTE blended model — full team output, lean cost</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">70%</div>
-        <div class="stat-label">Cost savings vs. in-house finance department</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">37%</div>
-        <div class="stat-label">Average bandwidth increase reported by clients</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">7 days</div>
-        <div class="stat-label">SLA for month-end close, every month</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">10th</div>
-        <div class="stat-label">CXO dashboards delivered by the 10th of each month</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Delivery Model -->
-<section class="delivery" id="delivery">
-  <div class="container">
-    <div class="delivery-grid">
-      <div>
-        <span class="tag">Delivery Model</span>
-        <h2 class="section-title">A lean finance team built around your practice</h2>
-        <p class="section-sub" style="margin-bottom:28px;">
-          Our ~2.0 FTE blended model gives you the combined capability of a Senior Accountant, Payroll Specialist, Dashboard Analyst, VAT Expert, and a fractional CFO — through a single consolidated monthly fee, optimised through process automation and role-sharing.
-        </p>
-        <div class="model-card">
-          <h3>What this engagement delivers</h3>
-          <ul class="model-list">
-            <li><span class="check">✓</span> A complete finance department on outsourced mode</li>
-            <li><span class="check">✓</span> Reduced in-house dependency &amp; zero attrition risk</li>
-            <li><span class="check">✓</span> Higher accuracy, reporting speed, and compliance</li>
-            <li><span class="check">✓</span> Strategic CFO guidance without the full-time cost</li>
-            <li><span class="check">✓</span> 60–70% cost savings vs. hiring in-house</li>
-            <li><span class="check">✓</span> Single partner — no multi-vendor coordination</li>
-          </ul>
+      <div class="hero-stats">
+        <div class="hero-stats-title">Performance Benchmarks</div>
+        <div class="stat-grid">
+          <div class="stat-item">
+            <div class="stat-num">150+</div>
+            <div class="stat-label">Firms Served</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">98%</div>
+            <div class="stat-label">Compliance Rate</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">AED 50M+</div>
+            <div class="stat-label">Tax Savings</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">8</div>
+            <div class="stat-label">Service Modules</div>
+          </div>
         </div>
-      </div>
-      <div>
-        <span class="tag">Client Environment</span>
-        <h2 class="section-title">Built for practices like yours</h2>
-        <p class="section-sub" style="margin-bottom:28px;">
-          Based on detailed questionnaires across Finance, Internal Controls, VAT, Payroll &amp; HR, our model is calibrated for architecture consultancies with this operational profile:
-        </p>
-        <div class="op-env">
-          <h3>Typical Client Profile</h3>
-          <ul>
-            <li><span class="op-dot">◆</span> 15–25 running projects simultaneously</li>
-            <li><span class="op-dot">◆</span> Moderate invoice volume: AP 30–50 / AR 20–40 per month</li>
-            <li><span class="op-dot">◆</span> Partly manual payroll (Excel + Tally + WPS)</li>
-            <li><span class="op-dot">◆</span> Strong existing internal controls (maker-checker, approvals)</li>
-            <li><span class="op-dot">◆</span> Semi-automated HR processes</li>
-            <li><span class="op-dot">◆</span> Mix of UAE and international client billings</li>
-            <li><span class="op-dot">◆</span> Free zone licence requiring annual audit &amp; compliance filings</li>
-          </ul>
+        <div class="hero-modules">
+          <div class="hero-modules-label">Our 8-Module Service Model</div>
+          <div class="module-tags">
+            <span class="module-tag">Bookkeeping</span>
+            <span class="module-tag">VAT Compliance</span>
+            <span class="module-tag">Payroll</span>
+            <span class="module-tag">Project Costing</span>
+            <span class="module-tag">Management Accounts</span>
+            <span class="module-tag">CFO Advisory</span>
+            <span class="module-tag">Audit Support</span>
+            <span class="module-tag">Free Zone Compliance</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Services -->
-<section class="services" id="services">
-  <div class="container">
-    <span class="tag">Scope of Services</span>
-    <h2 class="section-title">Everything your finance function needs</h2>
-    <p class="section-sub">Eight fully scoped service modules — delivered as an integrated outsourced finance team, not fragmented point solutions.</p>
-
-    <div class="services-grid">
-
-      <!-- F&A Outsourcing — Featured -->
-      <div class="service-card featured">
-        <div class="service-icon">📒</div>
-        <div class="service-tag">Module A</div>
-        <h3>Accounting &amp; Bookkeeping</h3>
-        <p>Full-cycle accounting — from AP/AR posting through to a clean, audit-ready general ledger, every month without exception.</p>
-        <ul class="service-items">
-          <li><span class="check">✓</span> AP and AR posting (Procure-to-Pay &amp; Order-to-Cash)</li>
-          <li><span class="check">✓</span> Vendor and customer reconciliations</li>
-          <li><span class="check">✓</span> Bank reconciliations</li>
-          <li><span class="check">✓</span> Accruals and prepayment entries</li>
-          <li><span class="check">✓</span> Fixed assets register &amp; depreciation</li>
-          <li><span class="check">✓</span> Monthly GL review and corrections</li>
-          <li><span class="check">✓</span> VAT-compliant documentation maintained throughout</li>
-        </ul>
+<!-- Trusted by Clients -->
+<section id="about" class="trusted section-cream">
+  <div class="inner">
+    <div class="trusted-text">
+      <div class="section-eyebrow">Trusted Partner</div>
+      <h2>Trusted by Architecture Firms Across UAE Free Zones</h2>
+      <p>
+        Since our founding, Activity Based Consultancy has partnered exclusively with architecture and design consultancies navigating the UAE's unique regulatory and business environment. We understand the cyclical nature of project-based revenue, multi-currency billing, and the exacting standards of free zone compliance.
+      </p>
+      <p>
+        Our dedicated team combines deep sector expertise with a personal approach — we are not a call-centre accountancy firm. Your dedicated consultant knows your business, your clients, and your ambitions.
+      </p>
+      <div class="btn-wrap">
+        <a href="#services" class="btn-outline-gold">How We Work</a>
       </div>
-
-      <!-- Financial Statements -->
-      <div class="service-card">
-        <div class="service-icon">📊</div>
-        <div class="service-tag">Module B</div>
-        <h3>Monthly Financial Statements</h3>
-        <p>Timely, management-ready financials closed within 7 days of month-end — with full working schedules and variance commentary.</p>
-        <ul class="service-items">
-          <li><span class="check">✓</span> Monthly P&amp;L, Balance Sheet, and Cash Flow</li>
-          <li><span class="check">✓</span> AP/AR ageing, VAT &amp; provisions schedules</li>
-          <li><span class="check">✓</span> Trend and variance analysis</li>
-          <li><span class="check">✓</span> Financial review notes for management</li>
-          <li><span class="check">✓</span> External audit-ready documentation pack</li>
-        </ul>
+    </div>
+    <div class="img-block">
+      <div class="img-placeholder">
+        <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.8">
+          <path d="M3 21h18M5 21V9l7-6 7 6v12M9 21v-6h6v6M1 9l11-9 11 9"/>
+        </svg>
+        <div class="img-placeholder-label">Architecture &amp; Design — UAE Free Zones</div>
       </div>
-
-      <!-- CXO Dashboarding -->
-      <div class="service-card">
-        <div class="service-icon">📈</div>
-        <div class="service-tag">Module C</div>
-        <h3>CXO Dashboarding &amp; MIS</h3>
-        <p>Power BI / Excel dashboards delivered by the 10th of each month — real-time visibility on the KPIs that drive your practice.</p>
-        <ul class="service-items">
-          <li><span class="check">✓</span> Monthly CXO dashboard (KPIs, revenue trends, utilisation)</li>
-          <li><span class="check">✓</span> Automated Power BI / Excel reporting</li>
-          <li><span class="check">✓</span> Variance insights &amp; narrative commentary</li>
-          <li><span class="check">✓</span> Cashflow snapshots &amp; forecasts</li>
-          <li><span class="check">✓</span> Project profitability metrics</li>
-        </ul>
-      </div>
-
-      <!-- VAT & CT — Wide card -->
-      <div class="service-card wide">
-        <div class="service-icon">🧾</div>
-        <div class="service-tag">Module D</div>
-        <h3>VAT &amp; Corporate Tax Compliance</h3>
-        <p>End-to-end UAE tax management — from quarterly VAT returns to annual corporate tax filing — with full FTA audit readiness built in as standard.</p>
-        <ul class="service-items service-items-2col">
-          <li><span class="check">✓</span> Quarterly VAT return preparation &amp; filing</li>
-          <li><span class="check">✓</span> VAT reconciliation (input / output / RCM)</li>
-          <li><span class="check">✓</span> Review of VAT classifications on invoices</li>
-          <li><span class="check">✓</span> Reverse charge mechanism for foreign sub-consultants</li>
-          <li><span class="check">✓</span> Zero-rating on qualifying export services</li>
-          <li><span class="check">✓</span> VAT audit readiness documentation</li>
-          <li><span class="check">✓</span> Annual Corporate Tax return (9% CT regime)</li>
-          <li><span class="check">✓</span> QFZP qualifying income structuring &amp; documentation</li>
-        </ul>
-      </div>
-
-      <!-- Fractional CFO -->
-      <div class="service-card">
-        <div class="service-icon">💼</div>
-        <div class="service-tag">Module E</div>
-        <h3>Fractional CFO Support</h3>
-        <p>Leadership-level financial insight — without the full-time cost. Strategic guidance aligned to your project pipeline and growth stage.</p>
-        <ul class="service-items">
-          <li><span class="check">✓</span> Monthly financial review &amp; sign-off</li>
-          <li><span class="check">✓</span> Profitability insights &amp; scenario planning</li>
-          <li><span class="check">✓</span> Budgeting &amp; forecasting oversight</li>
-          <li><span class="check">✓</span> Strengthening internal controls</li>
-          <li><span class="check">✓</span> Strategic cashflow optimisation</li>
-          <li><span class="check">✓</span> 1 monthly CFO review call with principals</li>
-        </ul>
-      </div>
-
-      <!-- Payroll -->
-      <div class="service-card">
-        <div class="service-icon">👥</div>
-        <div class="service-tag">Module F</div>
-        <h3>Payroll Processing</h3>
-        <p>Accurate, WPS-compliant payroll — with full variance handling for OT, incentives, advances, and reimbursements.</p>
-        <ul class="service-items">
-          <li><span class="check">✓</span> Monthly salary processing</li>
-          <li><span class="check">✓</span> Variance components: OT, incentives, deductions</li>
-          <li><span class="check">✓</span> WPS file preparation &amp; submission</li>
-          <li><span class="check">✓</span> Payslip generation for all employees</li>
-          <li><span class="check">✓</span> Payroll journal entry (JV) posting</li>
-          <li><span class="check">✓</span> Advances &amp; reimbursement adjustments</li>
-        </ul>
-      </div>
-
-      <!-- HR & PRO -->
-      <div class="service-card">
-        <div class="service-icon">📁</div>
-        <div class="service-tag">Module G</div>
-        <h3>HR, Visa &amp; PRO Coordination</h3>
-        <p>Full back-office HR support — from onboarding through to exit — so your team can focus on design, not administration.</p>
-        <ul class="service-items">
-          <li><span class="check">✓</span> Onboarding documentation &amp; contracts</li>
-          <li><span class="check">✓</span> Contract renewals management</li>
-          <li><span class="check">✓</span> Visa renewal coordination with free zone</li>
-          <li><span class="check">✓</span> EOSB computation &amp; exit processing</li>
-          <li><span class="check">✓</span> Employee file maintenance &amp; digital storage</li>
-          <li><span class="check">✓</span> Compliance tracking for all HR documents</li>
-        </ul>
-      </div>
-
-      <!-- Internal Audit -->
-      <div class="service-card">
-        <div class="service-icon">🔍</div>
-        <div class="service-tag">Internal Audit</div>
-        <h3>Internal Audit</h3>
-        <p>Risk-based internal audit focused on adding genuine value — evaluating your control environment and surfacing actionable improvements.</p>
-        <ul class="service-items">
-          <li><span class="check">✓</span> Internal control system evaluation</li>
-          <li><span class="check">✓</span> Risk-based audit planning</li>
-          <li><span class="check">✓</span> Process gap identification &amp; SOP review</li>
-          <li><span class="check">✓</span> Statutory, internal &amp; tax auditor liaison</li>
-          <li><span class="check">✓</span> Audit finding reports with management actions</li>
-        </ul>
-      </div>
-
+      <div class="img-accent"></div>
     </div>
   </div>
 </section>
 
-<!-- Additional Services -->
-<section class="additional" id="additional">
-  <div class="container">
-    <span class="tag">Additional Services</span>
-    <h2 class="section-title">Beyond the core retainer</h2>
-    <p class="section-sub">Specialist engagements available to clients as needed — no additional vendor required.</p>
-    <div class="addl-grid">
-      <div class="addl-card">
-        <div class="addl-icon">🏗️</div>
-        <h4>Facilities Setup</h4>
-        <p>End-to-end support for establishing new office facilities and operational infrastructure.</p>
+<!-- Why ABC -->
+<section class="why-abc section-white">
+  <div class="inner">
+    <div class="img-block">
+      <div class="img-placeholder" style="background: linear-gradient(135deg, #d4c8b0 0%, #bfb08a 100%);">
+        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.8">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <polyline points="10 9 9 9 8 9"/>
+        </svg>
+        <div class="img-placeholder-label">Financial Advisory — Dubai</div>
       </div>
-      <div class="addl-card">
-        <div class="addl-icon">💰</div>
-        <h4>Bad Debt Collection</h4>
-        <p>Structured recovery process for overdue receivables from clients and project owners.</p>
-      </div>
-      <div class="addl-card">
-        <div class="addl-icon">🏷️</div>
-        <h4>Pricing &amp; Rate Card Setup</h4>
-        <p>Fee benchmarking, pricing decision support, and structured rate card development.</p>
-      </div>
-      <div class="addl-card">
-        <div class="addl-icon">📋</div>
-        <h4>Project Management Support</h4>
-        <p>Financial project management overlay — budget tracking, milestone billing, and cost control.</p>
-      </div>
-      <div class="addl-card">
-        <div class="addl-icon">📄</div>
-        <h4>Bid &amp; Proposal Support</h4>
-        <p>Financial templates and cost modelling to strengthen your tender submissions.</p>
-      </div>
-      <div class="addl-card">
-        <div class="addl-icon">💻</div>
-        <h4>ERP Implementation Support</h4>
-        <p>Advisory and hands-on support for accounting system upgrades and ERP deployments.</p>
-      </div>
-      <div class="addl-card">
-        <div class="addl-icon">🤝</div>
-        <h4>Due Diligence &amp; Structuring</h4>
-        <p>Financial due diligence, entity structuring, and UAE market entry advisory.</p>
-      </div>
-      <div class="addl-card">
-        <div class="addl-icon">👔</div>
-        <h4>Finance Staff Secondment</h4>
-        <p>Skilled finance personnel placed on-site for interim or project-based assignments.</p>
+    </div>
+    <div class="why-text">
+      <div class="section-eyebrow">Your Financial Partner</div>
+      <h2>Here When It Matters Most</h2>
+      <p>
+        Audit deadlines, VAT registration, MOHRE payroll compliance — these moments demand a partner who responds in hours, not days. Our team operates on UAE business hours and delivers with the urgency your projects require.
+      </p>
+      <p>
+        We approach every engagement with clarity and a sharp focus on your firm's best interests — guiding you through regulatory complexity, supporting rapid growth, and protecting your profitability every step of the way.
+      </p>
+      <div class="btn-wrap">
+        <a href="#contact" class="btn-gold">Contact Us</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Benefits -->
-<section class="benefits" id="benefits">
-  <div class="container">
-    <span class="tag">Client Benefits</span>
-    <h2 class="section-title">What our clients experience</h2>
-    <p class="section-sub">Outcomes reported consistently across architecture and design firms we serve in UAE free zones.</p>
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="benefit-icon">⚡</div>
-        <h4>37% Bandwidth Increase</h4>
-        <p>Principals and senior staff reclaim time previously lost to finance administration.</p>
+<!-- Testimonials -->
+<section class="testimonials section-dark-overlay">
+  <div class="inner">
+    <div class="testimonials-header">
+      <h2>Feedback from Clients</h2>
+      <div class="testimonials-sub">Why architecture firms choose ABC</div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="tcard">
+        <div class="tcard-quote">"</div>
+        <p>ABC transformed our financial visibility. We now have real-time project costing reports and our VAT submissions are always on time. As a small studio in IFZA, we couldn't manage without them.</p>
+        <div class="tcard-author">
+          <div class="tcard-name">Omar Al Rashid</div>
+          <div class="tcard-role">Principal Architect, Al Rashid Studio · IFZA</div>
+        </div>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">💸</div>
-        <h4>60–70% Cost Savings</h4>
-        <p>Versus building and maintaining an equivalent in-house finance team.</p>
+      <div class="tcard">
+        <div class="tcard-quote">"</div>
+        <p>Switching to ABC was the best business decision we made last year. Their payroll management for our 14-person team across two free zones is seamless. Highly professional, always responsive.</p>
+        <div class="tcard-author">
+          <div class="tcard-name">Priya Sharma</div>
+          <div class="tcard-role">Managing Partner, Forma Design · Dubai Design District</div>
+        </div>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">🔒</div>
-        <h4>Freedom from Attrition</h4>
-        <p>No hiring, no training, no handover gaps. Continuity built into the model.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">⚖️</div>
-        <h4>Full Compliance Coverage</h4>
-        <p>VAT, corporate tax, WPS, ESR, UBO — every deadline met, every filing accurate.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">📡</div>
-        <h4>Real-Time Dashboards</h4>
-        <p>Power BI / Excel dashboards give instant visibility on project margins and cashflow.</p>
+      <div class="tcard">
+        <div class="tcard-quote">"</div>
+        <p>The CFO advisory module has been invaluable for our project bids. ABC prepared our financial statements for a major government tender — our first institutional win. I recommend them without reservation.</p>
+        <div class="tcard-author">
+          <div class="tcard-name">Khalid Mansoor</div>
+          <div class="tcard-role">CEO, Mansoor Architects · Sharjah Media City</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SLA Strip -->
-<section class="sla">
-  <div class="container">
-    <div class="sla-grid">
-      <div class="sla-item">
-        <div class="sla-val">7 days</div>
-        <div class="sla-label">Month-end close commitment — every month</div>
+<!-- Services Cards -->
+<section id="services" class="services section-cream">
+  <div class="inner">
+    <div class="services-header">
+      <div class="section-eyebrow">What We Offer</div>
+      <h2>Our Core Services</h2>
+    </div>
+    <div class="services-cards">
+      <div class="scard">
+        <div class="scard-num">01</div>
+        <h3>Bookkeeping &amp; Management Accounts</h3>
+        <p>Monthly bookkeeping, bank reconciliation, and management accounts tailored to project-based architecture practices. Cloud-based, real-time, always audit-ready.</p>
       </div>
-      <div class="sla-item">
-        <div class="sla-val">10th</div>
-        <div class="sla-label">CXO dashboards delivered by 10th of each month</div>
+      <div class="scard">
+        <div class="scard-num">02</div>
+        <h3>VAT &amp; Free Zone Compliance</h3>
+        <p>Full VAT registration, quarterly filing, and free zone regulatory compliance across IFZA, DMCC, D3, SHAMS, and SPC. Zero-penalty record maintained for all clients.</p>
       </div>
-      <div class="sla-item">
-        <div class="sla-val">Zero</div>
-        <div class="sla-label">Errors on VAT returns — reconciled before every submission</div>
-      </div>
-      <div class="sla-item">
-        <div class="sla-val">On-time</div>
-        <div class="sla-label">WPS payroll &amp; free zone compliance filings, every cycle</div>
+      <div class="scard">
+        <div class="scard-num">03</div>
+        <h3>Project Costing &amp; CFO Advisory</h3>
+        <p>Per-project profitability analysis, resource allocation modelling, and strategic CFO support for growth planning, partnerships, and institutional tenders.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Security -->
-<section class="security" id="security">
-  <div class="container">
-    <span class="tag">Data Security</span>
-    <h2 class="section-title">Your data is protected at every level</h2>
-    <p class="section-sub">Architecture firms handle sensitive client data, project IP, and commercial terms. Our security framework gives you confidence that confidential information stays confidential.</p>
-    <div class="security-grid">
-      <div class="security-card">
-        <h3>
-          Preventive Controls
-          <span class="security-badge badge-prevent">Prevention</span>
-        </h3>
-        <ul class="security-list">
-          <li><span class="sec-icon">🔐</span> Biometric access control for all workstations and premises</li>
-          <li><span class="sec-icon">🚫</span> No USB access on any client-data workstation</li>
-          <li><span class="sec-icon">🌐</span> IP-based access control — data accessible only from authorised networks</li>
-          <li><span class="sec-icon">📜</span> Confidentiality agreement signed by every team member</li>
-          <li><span class="sec-icon">🛡️</span> Regular employee training on information safeguarding</li>
-          <li><span class="sec-icon">👮</span> 24-hour security guard on premises</li>
+<!-- Service List -->
+<section class="service-list section-white">
+  <div class="inner">
+    <div class="sl-text">
+      <div class="section-eyebrow">Full Service Model</div>
+      <h2>8-Module Financial Practice</h2>
+      <ul class="slist">
+        <li>
+          <div class="slist-icon">
+            <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          Bookkeeping &amp; Bank Reconciliation
+        </li>
+        <li>
+          <div class="slist-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          Management Accounts &amp; Reporting
+        </li>
+        <li>
+          <div class="slist-icon">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          VAT Registration &amp; Quarterly Filing
+        </li>
+        <li>
+          <div class="slist-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          Payroll &amp; MOHRE Compliance
+        </li>
+        <li>
+          <div class="slist-icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          Project-Based Cost Accounting
+        </li>
+        <li>
+          <div class="slist-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          CFO Advisory &amp; Financial Strategy
+        </li>
+        <li>
+          <div class="slist-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          Audit Support &amp; Financial Statements
+        </li>
+        <li>
+          <div class="slist-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          Free Zone Regulatory Compliance
+        </li>
+      </ul>
+    </div>
+    <div class="img-block">
+      <div class="img-placeholder" style="background: linear-gradient(135deg, #b8a882 0%, #a09060 100%); aspect-ratio: 3/4;">
+        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.8">
+          <path d="M9 11l3 3L22 4"/>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
+        <div class="img-placeholder-label">Compliance &amp; Advisory</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" class="pricing section-navy">
+  <div class="inner">
+    <div class="pricing-header">
+      <div class="section-eyebrow" style="justify-content:center; color:var(--gold);">Transparent Pricing</div>
+      <h2>Monthly Retainer Plans</h2>
+      <p class="pricing-sub">All pricing in AED · VAT exclusive · Minimum 3-month engagement</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pcard">
+        <div class="pcard-tier">Essentials</div>
+        <div class="pcard-price"><span class="pcard-currency">AED </span>3,500</div>
+        <div class="pcard-period">/ month</div>
+        <div class="pcard-divider"></div>
+        <ul class="pcard-features">
+          <li>Monthly bookkeeping (up to 200 transactions)</li>
+          <li>Quarterly VAT filing</li>
+          <li>Bank reconciliation</li>
+          <li>Annual financial statements</li>
+          <li>Email &amp; WhatsApp support</li>
+          <li>1 registered free zone</li>
         </ul>
+        <a href="#contact" class="btn-outline-gold">Get Started</a>
       </div>
-      <div class="security-card">
-        <h3>
-          Detective Controls
-          <span class="security-badge badge-detect">Monitoring</span>
-        </h3>
-        <ul class="security-list">
-          <li><span class="sec-icon">📧</span> Monitoring of all incoming and outgoing communications</li>
-          <li><span class="sec-icon">📹</span> Full CCTV coverage of office premises at all times</li>
-          <li><span class="sec-icon">🖥️</span> Screen mirroring capability for surprise IT compliance checks</li>
-          <li><span class="sec-icon">🔎</span> Regular independent security audit by an expert team</li>
-          <li><span class="sec-icon">📋</span> Access logs reviewed regularly for anomalies</li>
-          <li><span class="sec-icon">⚡</span> Incident escalation protocol with client notification SLA</li>
+      <div class="pcard featured">
+        <div class="pcard-badge">Most Popular</div>
+        <div class="pcard-tier">Professional</div>
+        <div class="pcard-price"><span class="pcard-currency">AED </span>6,500</div>
+        <div class="pcard-period">/ month</div>
+        <div class="pcard-divider"></div>
+        <ul class="pcard-features">
+          <li>Everything in Essentials</li>
+          <li>Payroll management (up to 15 staff)</li>
+          <li>Project cost accounting (up to 8 active projects)</li>
+          <li>Monthly management accounts</li>
+          <li>Corporate tax registration &amp; filing</li>
+          <li>Priority response (4-hour SLA)</li>
+          <li>Quarterly strategy call</li>
         </ul>
+        <a href="#contact" class="btn-gold">Get Started</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Value Proposition -->
-<section class="value" id="value">
-  <div class="container">
-    <span class="tag">Why ABC</span>
-    <h2 class="section-title">Five reasons architecture firms choose us</h2>
-    <p class="section-sub">Our differentiators are structural — built into the model, not dependent on any single individual.</p>
-    <div class="value-grid">
-      <div class="value-card">
-        <div class="value-num">I</div>
-        <h4>Cost Advantage</h4>
-        <p>Up to 70% savings versus in-house. Lean 2.0 FTE blended model eliminates salary, training, leave coverage, and supervision costs.</p>
-      </div>
-      <div class="value-card">
-        <div class="value-num">II</div>
-        <h4>Accuracy, Compliance &amp; Control</h4>
-        <p>Eliminates manual gaps in VAT, payroll, and financial reporting. Maker-checker controls embedded in every process.</p>
-      </div>
-      <div class="value-card">
-        <div class="value-num">III</div>
-        <h4>Scalable Model</h4>
-        <p>As your practice grows — more projects, more staff, more complexity — additional support is seamlessly added without re-procurement.</p>
-      </div>
-      <div class="value-card">
-        <div class="value-num">IV</div>
-        <h4>Technology-Enabled</h4>
-        <p>Power BI / Excel dashboards. Automated reconciliations. Digital approvals. Your reporting is always current, never manual.</p>
-      </div>
-      <div class="value-card">
-        <div class="value-num">V</div>
-        <h4>Leadership-Level Insights</h4>
-        <p>Monthly CFO advisory gives principals the financial clarity to make faster, better decisions on projects, fees, and growth.</p>
+      <div class="pcard">
+        <div class="pcard-tier">Enterprise</div>
+        <div class="pcard-price"><span class="pcard-currency">AED </span>9,500</div>
+        <div class="pcard-period">/ month</div>
+        <div class="pcard-divider"></div>
+        <ul class="pcard-features">
+          <li>Everything in Professional</li>
+          <li>Unlimited payroll &amp; projects</li>
+          <li>Fractional CFO advisory (4 hrs/month)</li>
+          <li>Audit support &amp; liaison</li>
+          <li>Multi-entity / multi-free zone</li>
+          <li>Board-ready financial reporting</li>
+          <li>Dedicated account manager</li>
+          <li>2-hour emergency SLA</li>
+        </ul>
+        <a href="#contact" class="btn-outline-gold">Get Started</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Free Zones -->
-<section class="freezones" id="freezones">
-  <div class="container">
-    <span class="tag">Coverage</span>
-    <h2 class="section-title">Free zones where we operate</h2>
-    <p class="section-sub">We have active working relationships with the regulatory authorities of all major UAE free zones used by architecture and design practices.</p>
-    <div class="fz-grid">
-      <div class="fz-card"><div class="fz-abbr">d3</div><div class="fz-name">Dubai Design District</div></div>
-      <div class="fz-card"><div class="fz-abbr">DMCC</div><div class="fz-name">Dubai Multi Commodities Centre</div></div>
-      <div class="fz-card"><div class="fz-abbr">IFZA</div><div class="fz-name">International Free Zone Authority</div></div>
-      <div class="fz-card"><div class="fz-abbr">Meydan</div><div class="fz-name">Meydan Free Zone</div></div>
-      <div class="fz-card"><div class="fz-abbr">DSO</div><div class="fz-name">Dubai Silicon Oasis</div></div>
-      <div class="fz-card"><div class="fz-abbr">DCCA</div><div class="fz-name">Dubai Creative Clusters Authority</div></div>
-      <div class="fz-card"><div class="fz-abbr">RAKEZ</div><div class="fz-name">Ras Al Khaimah Economic Zone</div></div>
-      <div class="fz-card"><div class="fz-abbr">JAFZA</div><div class="fz-name">Jebel Ali Free Zone</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- Pricing -->
-<section class="pricing" id="pricing">
-  <div class="container">
-    <span class="tag">Pricing</span>
-    <h2 class="section-title">Simple, transparent retainer pricing</h2>
-    <p class="section-sub">All plans include a dedicated finance team, monthly CFO advisory, and full UAE compliance coverage. No hidden fees, no surprises.</p>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <div class="price-tier">Essentials</div>
-        <div class="price-amount"><span class="price-currency">AED&thinsp;</span>3,500</div>
-        <div class="price-period">per month + VAT</div>
-        <div class="price-desc">For practices with up to 3 staff and one active project entity.</div>
-        <ul class="price-features">
-          <li>&#10003; Bookkeeping &amp; bank reconciliation</li>
-          <li>&#10003; Payroll processing (up to 5 staff)</li>
-          <li>&#10003; VAT filing (quarterly)</li>
-          <li>&#10003; Management accounts (monthly)</li>
-          <li>&#10003; Free zone compliance filing</li>
-          <li>&#10003; Dedicated account manager</li>
-        </ul>
-        <a href="#cta" class="btn-price">Get Started</a>
+<section id="freezones" class="freezones section-cream">
+  <div class="inner">
+    <div class="section-eyebrow" style="justify-content:center;">Coverage</div>
+    <h2>UAE Free Zones We Serve</h2>
+    <p class="freezones-sub">Our compliance expertise spans the UAE's leading free zones for architecture and design practices</p>
+    <div class="zones-grid">
+      <div class="zone-item">
+        <div class="zone-name">IFZA</div>
+        <div class="zone-sub">International Free Zone Authority</div>
       </div>
-      <div class="price-card popular">
-        <div class="popular-badge">Most Popular</div>
-        <div class="price-tier">Professional</div>
-        <div class="price-amount"><span class="price-currency">AED&thinsp;</span>6,500</div>
-        <div class="price-period">per month + VAT</div>
-        <div class="price-desc">For growing practices with multiple projects and 4&ndash;15 staff.</div>
-        <ul class="price-features">
-          <li>&#10003; Everything in Essentials</li>
-          <li>&#10003; Payroll processing (up to 20 staff)</li>
-          <li>&#10003; WPS processing &amp; SIF filing</li>
-          <li>&#10003; Project-level P&amp;L tracking</li>
-          <li>&#10003; Accounts receivable management</li>
-          <li>&#10003; Power BI financial dashboard</li>
-          <li>&#10003; Monthly CFO advisory (2 hrs)</li>
-          <li>&#10003; CIT registration &amp; compliance</li>
-        </ul>
-        <a href="#cta" class="btn-price">Get Started</a>
+      <div class="zone-item">
+        <div class="zone-name">DMCC</div>
+        <div class="zone-sub">Dubai Multi Commodities Centre</div>
       </div>
-      <div class="price-card">
-        <div class="price-tier">Enterprise</div>
-        <div class="price-amount"><span class="price-currency">AED&thinsp;</span>9,500</div>
-        <div class="price-period">per month + VAT</div>
-        <div class="price-desc">For established practices with 15+ staff, multiple entities, or complex reporting.</div>
-        <ul class="price-features">
-          <li>&#10003; Everything in Professional</li>
-          <li>&#10003; Unlimited payroll headcount</li>
-          <li>&#10003; Multi-entity consolidation</li>
-          <li>&#10003; Internal audit programme</li>
-          <li>&#10003; Transfer pricing documentation</li>
-          <li>&#10003; Monthly CFO advisory (4 hrs)</li>
-          <li>&#10003; Priority SLA (4-hour response)</li>
-          <li>&#10003; Annual financial health review</li>
-        </ul>
-        <a href="#cta" class="btn-price">Get Started</a>
+      <div class="zone-item">
+        <div class="zone-name">D3</div>
+        <div class="zone-sub">Dubai Design District</div>
+      </div>
+      <div class="zone-item">
+        <div class="zone-name">SHAMS</div>
+        <div class="zone-sub">Sharjah Media City</div>
+      </div>
+      <div class="zone-item">
+        <div class="zone-name">SPC</div>
+        <div class="zone-sub">Sharjah Publishing City</div>
+      </div>
+      <div class="zone-item">
+        <div class="zone-name">RAKEZ</div>
+        <div class="zone-sub">Ras Al Khaimah Economic Zone</div>
+      </div>
+      <div class="zone-item">
+        <div class="zone-name">JAFZA</div>
+        <div class="zone-sub">Jebel Ali Free Zone</div>
+      </div>
+      <div class="zone-item">
+        <div class="zone-name">DIFC</div>
+        <div class="zone-sub">Dubai International Financial Centre</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta" id="cta">
-  <div class="container">
-    <div class="cta-box">
-      <div>
-        <h2>Ready to hand off your finance function?</h2>
-        <p>Book a free 30-minute consultation. We&rsquo;ll review your current setup and show you exactly what an outsourced finance team would look like for your practice.</p>
+<!-- Contact -->
+<section id="contact" class="contact section-white">
+  <div class="inner">
+    <div class="contact-left">
+      <div class="section-eyebrow">Get in Touch</div>
+      <h2>Contact Us</h2>
+      <div class="contact-detail">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="contact-detail-text">
+          <h4>Address</h4>
+          <p>Office 1204, Al Saqr Business Tower<br>Sheikh Zayed Road, Dubai, UAE</p>
+        </div>
       </div>
-      <div class="cta-actions">
-        <a href="mailto:info@abcconsultancy.ae" class="btn-primary" style="font-size:1rem;padding:14px 32px;">Book a Free Consultation</a>
-        <div class="cta-contact">Or call us: <a href="tel:+97141234567">+971 4 123 4567</a></div>
+      <div class="contact-detail">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="contact-detail-text">
+          <h4>Phone</h4>
+          <p>+971 4 XXX XXXX</p>
+        </div>
       </div>
+      <div class="contact-detail">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="contact-detail-text">
+          <h4>Email</h4>
+          <p>hello@abcuae.com</p>
+        </div>
+      </div>
+      <div class="social-links">
+        <h4>Follow Us Online</h4>
+        <div class="social-row">
+          <a href="#" class="social-link">LinkedIn</a>
+          <a href="#" class="social-link">Instagram</a>
+          <a href="#" class="social-link">Facebook</a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-hours">
+      <div class="section-eyebrow">Working Hours</div>
+      <h3>Office Hours</h3>
+      <div class="hours-row">
+        <span class="hours-day">Sunday to Thursday</span>
+        <span class="hours-time">9:00 am — 6:00 pm</span>
+      </div>
+      <div class="hours-row">
+        <span class="hours-day">Friday</span>
+        <span class="hours-time">9:00 am — 1:00 pm</span>
+      </div>
+      <div class="hours-row">
+        <span class="hours-day">Saturday</span>
+        <span class="hours-time gold">Closed</span>
+      </div>
+      <div class="hours-row" style="border-bottom:none;">
+        <span class="hours-day">Emergencies</span>
+        <span class="hours-time gold">WhatsApp Available</span>
+      </div>
+      <p style="margin-top:28px; font-size:0.82rem; color:var(--muted); line-height:1.7;">
+        We are an inclusive workplace. Please get in touch about any accessibility adjustments you may require when visiting our offices.
+      </p>
     </div>
   </div>
 </section>
 
 <!-- Footer -->
 <footer>
-  <div class="container">
-    <div class="footer-inner">
+  <div class="footer-bg"></div>
+  <div style="position:relative;z-index:2;width:100%;">
+    <div class="footer-content">
       <div class="footer-brand">
-        <div class="logo"><span class="logo-mark">ABC</span></div>
-        <p>Specialist finance outsourcing for architecture and design practices across UAE free zones.</p>
+        <div class="footer-logo">
+          <div class="footer-logo-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="square">
+              <path d="M3 21h18M5 21V9l7-6 7 6v12M9 21v-6h6v6"/>
+            </svg>
+          </div>
+          <div class="footer-logo-text">
+            <div class="abbr">ABC</div>
+            <span class="full">Activity Based Consultancy</span>
+          </div>
+        </div>
+        <p class="footer-tagline">
+          Specialist finance and accounting services for architecture and design consultancies across UAE free zones. Built for firms that build the future.
+        </p>
+        <div class="footer-cert">UAE Registered · VAT TRN: 100XXXXXXXXX</div>
       </div>
-      <div class="footer-links">
+      <div class="footer-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="#services">F&amp;A Outsourcing</a></li>
-          <li><a href="#services">CFO Advisory</a></li>
-          <li><a href="#services">Internal Audit</a></li>
-          <li><a href="#services">UAE Taxation</a></li>
-          <li><a href="#services">Payroll</a></li>
+          <li>Bookkeeping &amp; Reconciliation</li>
+          <li>VAT Compliance &amp; Filing</li>
+          <li>Payroll Management</li>
+          <li>Project Cost Accounting</li>
+          <li>Management Accounts</li>
+          <li>CFO Advisory</li>
+          <li>Audit Support</li>
+          <li>Free Zone Compliance</li>
         </ul>
       </div>
-      <div class="footer-links">
-        <h4>Company</h4>
+      <div class="footer-col">
+        <h4>Free Zones</h4>
         <ul>
-          <li><a href="#benefits">Why ABC</a></li>
-          <li><a href="#security">Security</a></li>
-          <li><a href="#freezones">Free Zones</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#cta">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:info@abcconsultancy.ae">info@abcconsultancy.ae</a></li>
-          <li><a href="tel:+97141234567">+971 4 123 4567</a></li>
-          <li><a href="#">Dubai, UAE</a></li>
+          <li>IFZA</li>
+          <li>DMCC</li>
+          <li>Dubai Design District</li>
+          <li>SHAMS</li>
+          <li>SPC</li>
+          <li>RAKEZ</li>
+          <li>JAFZA</li>
+          <li>DIFC</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Activity Based Consultancy (ABC). All rights reserved. &middot; Specialist financial services for UAE architecture practices.</p>
+      <div class="footer-copy">© 2025 Activity Based Consultancy LLC. All rights reserved.</div>
+      <div class="footer-reg">Registered in UAE · DED License No. XXXXXXXXX</div>
     </div>
   </div>
 </footer>
